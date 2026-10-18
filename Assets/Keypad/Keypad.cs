@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 namespace Godot.Collections;
 
 [GlobalClass]
-public partial class Keypad : Interactable
+public partial class Keypad : Interactible
 {
 	[Export] public int Code = 1234;
-	[Export] public Interactable ActivateObject;
+	[Export] public Interactible ActivateObject;
 	
 	[ExportGroup("Advanced")]
 	[Export] public Camera3D Camera;

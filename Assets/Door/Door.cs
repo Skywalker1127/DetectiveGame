@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class Door : Interactable
+public partial class Door : Interactible
 {
 	[ExportGroup("Advanced")]
 	[Export] public Node3D DoorPivot;

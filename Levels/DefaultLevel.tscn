@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ds0ewg7u8mge5" path="res://Assets/Keypad/Keypad.tscn" id="2_e65p0"]
 [ext_resource type="PackedScene" uid="uid://dwtdlevehlsm7" path="res://UI/MainHUD.tscn" id="3_aj1r1"]
 [ext_resource type="PackedScene" uid="uid://buiov0k0k6a15" path="res://Assets/Door/Door.tscn" id="4_fv6ia"]
+[ext_resource type="PackedScene" uid="uid://bff7vr241upj2" path="res://Assets/ReadableDocument/ReadableDocument.tscn" id="5_i2x2l"]
+[ext_resource type="Resource" uid="uid://bmxrxqevpufta" path="res://Ink/TestDocument.ink" id="6_oaulu"]
+[ext_resource type="PackedScene" uid="uid://05lu5do62h4l" path="res://Assets/Table/Table.tscn" id="7_ixhfn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8pdh"]
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -125,3 +128,10 @@ ActivateObject = NodePath("../Door")
 
 [node name="Door" parent="." unique_id=35669076 instance=ExtResource("4_fv6ia")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.744795, -1.1041247, -5.464423)
+
+[node name="ReadableDocument" parent="." unique_id=1230604212 instance=ExtResource("5_i2x2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.989433, -0.35811776, 0.38223773)
+Story = ExtResource("6_oaulu")
+
+[node name="Table" parent="." unique_id=1090557724 instance=ExtResource("7_ixhfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.376678, -1.1081178, 0.5477128)

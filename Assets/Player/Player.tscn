@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d01pnw520vtaa" path="res://Assets/DitherShader/bayer16tile2.png" id="9_u5to8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
+radius = 0.3
+height = 1.75
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ylk4m"]
 render_priority = 0
@@ -39,11 +41,11 @@ Camera = NodePath("Head/Camera")
 MoebiusShaderQuad = NodePath("Head/Camera/MoebiusShaderQuad")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=598375483]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0064642, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
 shape = SubResource("CapsuleShape3D_q3lat")
 
 [node name="Head" type="Node3D" parent="." unique_id=270068696]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7600478, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=1856683160]
 current = true
@@ -51,6 +53,7 @@ current = true
 [node name="MoebiusShaderQuad" type="MeshInstance3D" parent="Head/Camera" unique_id=1266050345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 material_overlay = SubResource("ShaderMaterial_ylk4m")
+extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_3qydi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1907510564]

@@ -55,32 +55,37 @@ public partial class Player : CharacterBody3D
 
 			if (@event.IsActionPressed("interact"))
 			{
-				// Get the center of the viewport screen
-				Vector2 screenSize = GetViewport().GetVisibleRect().Size;
-				Vector2 centerScreen = screenSize / 2f;
-
-				// Calculate origin and direction from the camera
-				Vector3 from = Camera.ProjectRayOrigin(centerScreen);
-				Vector3 to = from + Camera.ProjectRayNormal(centerScreen) * InteractRange;
-
-				// Query the physics space
-				var spaceState = GetWorld3D().DirectSpaceState;
-				var query = PhysicsRayQueryParameters3D.Create(from, to);
-				query.CollideWithAreas = true;
-				var result = spaceState.IntersectRay(query);
-
-				if (result.Count > 0)
+				var interactibleObject = GetLookedAtInteractible();
+				if (interactibleObject != null)
 				{
-					// Interact if we hit an Interactable object
-					var hitCollider = (Node3D)result["collider"];
-					if (hitCollider is Interactable interactableObject)
-					{
-						GetViewport().SetInputAsHandled();
-						interactableObject.Interact();
-					}
+					GetViewport().SetInputAsHandled();
+					interactibleObject.Interact();
 				}
 			}				
 		}
+	}
+
+	public Interactible GetLookedAtInteractible()
+	{
+		// Get the center of the viewport screen
+		Vector2 screenSize = GetViewport().GetVisibleRect().Size;
+		Vector2 centerScreen = screenSize / 2f;
+
+		// Calculate origin and direction from the camera
+		Vector3 from = Camera.ProjectRayOrigin(centerScreen);
+		Vector3 to = from + Camera.ProjectRayNormal(centerScreen) * InteractRange;
+
+		// Query the physics space
+		var spaceState = GetWorld3D().DirectSpaceState;
+		var query = PhysicsRayQueryParameters3D.Create(from, to);
+		query.CollideWithAreas = true;
+		var result = spaceState.IntersectRay(query);
+
+		if (result.Count > 0 && (Node3D)result["collider"] is Interactible interactableObject)
+		{
+			return interactableObject;
+		}
+		return null;
 	}
 
 	public override void _PhysicsProcess(double delta)
