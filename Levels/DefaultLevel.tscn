@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bff7vr241upj2" path="res://Assets/ReadableDocument/ReadableDocument.tscn" id="5_i2x2l"]
 [ext_resource type="Resource" uid="uid://bmxrxqevpufta" path="res://Ink/TestDocument.ink" id="6_oaulu"]
 [ext_resource type="PackedScene" uid="uid://05lu5do62h4l" path="res://Assets/Table/Table.tscn" id="7_ixhfn"]
+[ext_resource type="PackedScene" path="res://Assets/Character/Character.tscn" id="8_2d32t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8pdh"]
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -135,3 +136,6 @@ Story = ExtResource("6_oaulu")
 
 [node name="Table" parent="." unique_id=1090557724 instance=ExtResource("7_ixhfn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.376678, -1.1081178, 0.5477128)
+
+[node name="Character" parent="." unique_id=1131559210 instance=ExtResource("8_2d32t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.820042, -1.1081178, -1.2317519)
