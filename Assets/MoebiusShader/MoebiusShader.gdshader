@@ -4,6 +4,11 @@ render_mode unshaded,vertex_lighting;
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
 uniform sampler2D NORMAL_TEXTURE : hint_normal_roughness_texture, filter_linear_mipmap;
 
+// Used by the inspect view, which renders onto a transparent viewport:
+// when enabled, pixels with no geometry are made fully transparent.
+uniform bool mask_background = false;
+uniform sampler2D depth_tex : hint_depth_texture;
+
 // hatching
 uniform sampler2D hatch: filter_nearest,repeat_enable;
 uniform float hatch_uv_scaling: hint_range (0.0, 100.0, 1.0) = 40.0;
@@ -91,5 +96,9 @@ void fragment() {
 		ALBEDO = line_color;
 	} else {
 		ALBEDO = final_color;
+	}
+
+	if (mask_background) {
+		ALPHA = texture(depth_tex, uv).r > 0.0 ? 1.0 : 0.0;
 	}
 }

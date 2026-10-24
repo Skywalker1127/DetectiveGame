@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bmxrxqevpufta" path="res://Ink/TestDocument.ink" id="6_oaulu"]
 [ext_resource type="PackedScene" uid="uid://05lu5do62h4l" path="res://Assets/Table/Table.tscn" id="7_ixhfn"]
 [ext_resource type="PackedScene" path="res://Assets/Character/Character.tscn" id="8_2d32t"]
+[ext_resource type="PackedScene" uid="uid://c48b1qhns0ioj" path="res://Assets/InspectableObject/Cactus.tscn" id="9_l0bg7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8pdh"]
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -139,3 +140,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.376678, -1.1081178, 0.5477
 
 [node name="Character" parent="." unique_id=1131559210 instance=ExtResource("8_2d32t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.820042, -1.1081178, -1.2317519)
+
+[node name="Cactus" parent="." unique_id=789202101 instance=ExtResource("9_l0bg7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.298562, -0.3581183, 0.29278636)

@@ -25,13 +25,17 @@ This is the fourth outcome!
 == result ==
 After the outcomes, we have some more text and paragraphs. Choice 2 is the one we actually wanted you to pick, so now we give you something good if you picked it!
 
-* { second_outcome } -> ending_good
-* { not second_outcome } -> ending_bad
+* { second_outcome } -> good_result
+* { not second_outcome } -> bad_result
 
-== ending_good ==
+== good_result ==
 Something good for picking the second choice!
-->END
+->weave_example
 
-== ending_bad ==
+== bad_result ==
 Something bad for picking the wrong choice!
+->weave_example
+
+== weave_example ==
+
 ->END
