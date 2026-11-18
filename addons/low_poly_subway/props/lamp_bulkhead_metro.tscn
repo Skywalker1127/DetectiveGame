@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/lamp_bulkhead_metro_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.3000, 0.5982, 0.1180)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.2440, 0.1240, 0.0050)
+
+[node name="lamp_bulkhead_metro" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+on = true
+lit = PackedStringArray("lamp_bulkhead_metro_lens")
+
+[node name="Collision" type="StaticBody3D" parent="lamp_bulkhead_metro"]
+
+[node name="Box" type="CollisionShape3D" parent="lamp_bulkhead_metro/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.4091, 0.0590)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="lamp_bulkhead_metro/lamp_bulkhead_metro_lens"]
+
+[node name="Box" type="CollisionShape3D" parent="lamp_bulkhead_metro/lamp_bulkhead_metro_lens/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.2000, 0.1040)
+shape = SubResource("box1")

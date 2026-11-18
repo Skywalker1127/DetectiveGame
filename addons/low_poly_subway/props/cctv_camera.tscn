@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://csad2soa8ptae"]
+
+[ext_resource type="PackedScene" uid="uid://c752li0s6xlr0" path="res://addons/low_poly_subway/models/cctv_camera_model.glb" id="1"]
+[ext_resource type="Script" uid="uid://jn3jalgiwvuc" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(0.016, 0.0148, 0.0088)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.16, 0.1874, 0.3373)
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.1, 0.1425, 0.23)
+
+[node name="cctv_camera" unique_id=123095750 instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+run = "pan"
+lit = PackedStringArray("cctv_camera_lamp")
+
+[node name="cctv_camera_head" parent="cctv_camera" parent_id_path=PackedInt32Array(60240719) index="0" unique_id=1460987669]
+transform = Transform3D(0.9659258, -0.1830127, -0.1830127, 0, 0.70710677, -0.70710677, 0.25881904, 0.68301266, 0.68301266, 0, 3.14, 0.23)
+
+[node name="Collision" type="StaticBody3D" parent="cctv_camera/cctv_camera_head/cctv_camera_lamp" parent_id_path=PackedInt32Array(606141926) index="0" unique_id=1818978210]
+
+[node name="Box" type="CollisionShape3D" parent="cctv_camera/cctv_camera_head/cctv_camera_lamp/Collision" index="0" unique_id=984628311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045, 3.1876, 0.454)
+shape = SubResource("box2")
+
+[node name="Collision" type="StaticBody3D" parent="cctv_camera/cctv_camera_head" index="1" unique_id=77953668]
+
+[node name="Box" type="CollisionShape3D" parent="cctv_camera/cctv_camera_head/Collision" index="0" unique_id=59197034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0176, 0.0839)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="cctv_camera" parent_id_path=PackedInt32Array(60240719) index="1" unique_id=2030499221]
+
+[node name="Box" type="CollisionShape3D" parent="cctv_camera/Collision" index="0" unique_id=1855788683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1987, 0.115)
+shape = SubResource("box0")

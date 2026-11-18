@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d1qax20pxokal"]
+
+[ext_resource type="PackedScene" uid="uid://cs0ki3ux4v2sb" path="res://addons/low_poly_subway/models/lamp_pendant_metro_model.glb" id="1"]
+[ext_resource type="Script" uid="uid://jn3jalgiwvuc" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.564, 0.006, 0.5554)
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.616, 1.108, 0.608)
+
+[node name="lamp_pendant_metro" unique_id=516846772 instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+on = true
+lit = PackedStringArray("lamp_pendant_metro_lens")
+
+[node name="Collision" type="StaticBody3D" parent="lamp_pendant_metro/lamp_pendant_metro_lens" parent_id_path=PackedInt32Array(932106411) index="0" unique_id=229800129]
+
+[node name="Box" type="CollisionShape3D" parent="lamp_pendant_metro/lamp_pendant_metro_lens/Collision" index="0" unique_id=2102532435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.897, 0)
+shape = SubResource("box1")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="lamp_pendant_metro/lamp_pendant_metro_lens/Collision/Box" index="0" unique_id=602494563]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+light_energy = 2.037
+
+[node name="Collision" type="StaticBody3D" parent="lamp_pendant_metro" parent_id_path=PackedInt32Array(718292674) index="1" unique_id=929694078]
+
+[node name="Box" type="CollisionShape3D" parent="lamp_pendant_metro/Collision" index="0" unique_id=1536491651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.446, 0)
+shape = SubResource("box0")

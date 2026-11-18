@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/vending_machine_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.9200, 1.8500, 0.9330)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.6080, 1.3080, 0.0050)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(0.6040, 1.3040, 0.0050)
+
+[sub_resource type="BoxShape3D" id="box3"]
+size = Vector3(0.1200, 0.0660, 0.0660)
+
+[node name="vending_machine" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "button"
+clip = "drop"
+lit = PackedStringArray("vending_machine_front")
+idle = PackedStringArray("vending_machine_front_idle")
+
+[node name="Collision" type="StaticBody3D" parent="vending_machine"]
+
+[node name="Box" type="CollisionShape3D" parent="vending_machine/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0060, 0.9250, 0.0635)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="vending_machine/vending_machine_front"]
+
+[node name="Box" type="CollisionShape3D" parent="vending_machine/vending_machine_front/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800, 1.0500, 0.4060)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="vending_machine/vending_machine_front_idle"]
+
+[node name="Box" type="CollisionShape3D" parent="vending_machine/vending_machine_front_idle/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800, 1.0500, 0.4040)
+shape = SubResource("box2")
+
+[node name="Collision" type="StaticBody3D" parent="vending_machine/vending_machine_can"]
+
+[node name="Box" type="CollisionShape3D" parent="vending_machine/vending_machine_can/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800, 0.2900, 0.4700)
+shape = SubResource("box3")

@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/gate_entrance_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.0600, 2.6000, 0.0800)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(1.7200, 0.0600, 0.1000)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(1.7160, 0.0120, 0.0600)
+
+[sub_resource type="BoxShape3D" id="box3"]
+size = Vector3(0.1110, 2.6000, 0.1650)
+
+[sub_resource type="BoxShape3D" id="box4"]
+size = Vector3(0.2128, 2.5680, 0.0400)
+
+[sub_resource type="BoxShape3D" id="box5"]
+size = Vector3(0.2128, 2.5680, 0.0400)
+
+[sub_resource type="BoxShape3D" id="box6"]
+size = Vector3(0.2128, 2.5680, 0.0400)
+
+[sub_resource type="BoxShape3D" id="box7"]
+size = Vector3(0.2128, 2.5680, 0.0400)
+
+[sub_resource type="BoxShape3D" id="box8"]
+size = Vector3(0.2128, 2.5680, 0.0400)
+
+[sub_resource type="BoxShape3D" id="box9"]
+size = Vector3(0.2128, 2.5680, 0.0400)
+
+[sub_resource type="BoxShape3D" id="box10"]
+size = Vector3(0.2128, 2.5680, 0.0400)
+
+[sub_resource type="BoxShape3D" id="box11"]
+size = Vector3(0.2128, 2.5680, 0.1300)
+
+[node name="gate_entrance" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+clip = "open"
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8300, 1.3000, 0.1850)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_head"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_head/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.6300, 0.1850)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_threshold"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_threshold/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0060, 0.1850)
+shape = SubResource("box2")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_jamb"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_jamb/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8545, 1.3000, 0.2075)
+shape = SubResource("box3")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar1"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar1/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6814, 1.3140, 0.1850)
+shape = SubResource("box4")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar2"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4814, 1.3140, 0.1850)
+shape = SubResource("box5")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar3"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar3/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2814, 1.3140, 0.1850)
+shape = SubResource("box6")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar4"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar4/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0814, 1.3140, 0.1850)
+shape = SubResource("box7")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar5"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar5/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1186, 1.3140, 0.1850)
+shape = SubResource("box8")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar6"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar6/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3186, 1.3140, 0.1850)
+shape = SubResource("box9")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar7"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar7/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5186, 1.3140, 0.1850)
+shape = SubResource("box10")
+
+[node name="Collision" type="StaticBody3D" parent="gate_entrance/gate_entrance_bar8"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_entrance/gate_entrance_bar8/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7186, 1.3140, 0.2300)
+shape = SubResource("box11")

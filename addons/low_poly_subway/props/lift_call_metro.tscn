@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/lift_call_metro_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.1200, 0.2400, 0.0280)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.0440, 0.0440, 0.0120)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(0.0480, 0.0480, 0.0050)
+
+[node name="lift_call_metro" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "switch"
+clip = "press"
+lit = PackedStringArray("lift_call_metro_lamp")
+
+[node name="Collision" type="StaticBody3D" parent="lift_call_metro"]
+
+[node name="Box" type="CollisionShape3D" parent="lift_call_metro/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1000, 0.0140)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="lift_call_metro/lift_call_metro_button"]
+
+[node name="Box" type="CollisionShape3D" parent="lift_call_metro/lift_call_metro_button/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0000, 0.0060)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="lift_call_metro/lift_call_metro_lamp"]
+
+[node name="Box" type="CollisionShape3D" parent="lift_call_metro/lift_call_metro_lamp/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1000, 0.0410)
+shape = SubResource("box2")

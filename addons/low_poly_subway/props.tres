@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://77ruikl170rt"]
+
+[ext_resource type="Texture2D" uid="uid://dhondedvwhlad" path="res://addons/low_poly_subway/atlas.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://b6a128crcnqgx" path="res://addons/low_poly_subway/atlas_glow.png" id="2"]
+
+[resource]
+resource_name = "props"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1")
+metallic_specular = 0.0
+emission_enabled = true
+emission_texture = ExtResource("2")
+texture_filter = 5

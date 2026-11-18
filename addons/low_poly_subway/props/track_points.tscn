@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/track_points_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(4.0000, 0.4000, 2.0000)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(2.3125, 0.1330, 1.9966)
+
+[node name="track_points" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "switch"
+clip = "throw"
+
+[node name="Collision" type="StaticBody3D" parent="track_points"]
+
+[node name="Box" type="CollisionShape3D" parent="track_points/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, -0.9000, -0.0000)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="track_points/track_points_blades"]
+
+[node name="Box" type="CollisionShape3D" parent="track_points/track_points_blades/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5437, -0.9115, -0.0000)
+shape = SubResource("box1")
