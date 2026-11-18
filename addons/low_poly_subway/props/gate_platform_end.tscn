@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/gate_platform_end_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.1400, 1.1500, 0.1400)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.0950, 1.1500, 0.0800)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(1.2800, 1.0000, 0.1100)
+
+[node name="gate_platform_end" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+clip = "open"
+
+[node name="Collision" type="StaticBody3D" parent="gate_platform_end"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_platform_end/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6500, 0.5750, -0.0000)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="gate_platform_end/gate_platform_end_post"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_platform_end/gate_platform_end_post/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6425, 0.5750, -0.0000)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="gate_platform_end/gate_platform_end_leaf"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_platform_end/gate_platform_end_leaf/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5850, 0.6250, -0.0000)
+shape = SubResource("box2")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://bmtmfhcilvldc"
+path="res://.godot/imported/TestDialogue.ink-7f1ff1c567409c834b82c5d25aae8ba4.res"
+
+[deps]
+
+source_file="res://Ink/TestDialogue.ink"
+dest_files=["res://.godot/imported/TestDialogue.ink-7f1ff1c567409c834b82c5d25aae8ba4.res"]
+
+[params]
+
+is_main_file=true
+compress=true

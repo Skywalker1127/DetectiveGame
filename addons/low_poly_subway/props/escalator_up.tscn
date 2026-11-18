@@ -1,0 +1,270 @@
+[gd_scene load_steps=32 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/escalator_up_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(1.6000, 0.4833, 0.6902)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(1.6000, 0.4834, 0.6903)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(1.6000, 0.4833, 0.6903)
+
+[sub_resource type="BoxShape3D" id="box3"]
+size = Vector3(1.6000, 0.4833, 0.6903)
+
+[sub_resource type="BoxShape3D" id="box4"]
+size = Vector3(1.6000, 0.4834, 0.6902)
+
+[sub_resource type="BoxShape3D" id="box5"]
+size = Vector3(1.6000, 0.4833, 0.6903)
+
+[sub_resource type="BoxShape3D" id="box6"]
+size = Vector3(1.6000, 0.8000, 1.1437)
+
+[sub_resource type="BoxShape3D" id="box7"]
+size = Vector3(1.5800, 0.0320, 0.7847)
+
+[sub_resource type="BoxShape3D" id="box8"]
+size = Vector3(1.5800, 0.0320, 0.4296)
+
+[sub_resource type="BoxShape3D" id="box9"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[sub_resource type="BoxShape3D" id="box10"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box11"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box12"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[sub_resource type="BoxShape3D" id="box13"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box14"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[sub_resource type="BoxShape3D" id="box15"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box16"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box17"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[sub_resource type="BoxShape3D" id="box18"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box19"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box20"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[sub_resource type="BoxShape3D" id="box21"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box22"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box23"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[sub_resource type="BoxShape3D" id="box24"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box25"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[sub_resource type="BoxShape3D" id="box26"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box27"]
+size = Vector3(1.0000, 0.2540, 0.3530)
+
+[sub_resource type="BoxShape3D" id="box28"]
+size = Vector3(1.0000, 0.2540, 0.3531)
+
+[node name="escalator_up" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+run = "run"
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_soffit1"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_soffit1/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.2417, 0.9402)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_soffit2"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_soffit2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7250, 0.2499)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_soffit3"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_soffit3/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.2084, -0.4404)
+shape = SubResource("box2")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_soffit4"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_soffit4/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.6917, -1.1306)
+shape = SubResource("box3")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_soffit5"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_soffit5/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.1750, -1.8209)
+shape = SubResource("box4")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_soffit6"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_soffit6/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.6583, -2.5111)
+shape = SubResource("box5")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_soffit7"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_soffit7/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 3.3000, -3.4282)
+shape = SubResource("box6")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_landing1"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_landing1/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0300, 3.6056)
+shape = SubResource("box7")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_landing2"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_landing2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 4.0180, -3.7832)
+shape = SubResource("box8")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step01"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step01/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, -0.1110, 3.3938)
+shape = SubResource("box9")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step02"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step02/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, -0.1110, 3.0368)
+shape = SubResource("box10")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step03"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step03/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, -0.1110, 2.6798)
+shape = SubResource("box11")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step04"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step04/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.1270, 2.3228)
+shape = SubResource("box12")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step05"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step05/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.3770, 1.9657)
+shape = SubResource("box13")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step06"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step06/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.6270, 1.6086)
+shape = SubResource("box14")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step07"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step07/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8770, 1.2516)
+shape = SubResource("box15")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step08"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step08/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1270, 0.8946)
+shape = SubResource("box16")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step09"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step09/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.3770, 0.5375)
+shape = SubResource("box17")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step10"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step10/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.6270, 0.1805)
+shape = SubResource("box18")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step11"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step11/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.8770, -0.1765)
+shape = SubResource("box19")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step12"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step12/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.1270, -0.5335)
+shape = SubResource("box20")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step13"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step13/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.3770, -0.8906)
+shape = SubResource("box21")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step14"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step14/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.6270, -1.2476)
+shape = SubResource("box22")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step15"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step15/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.8770, -1.6046)
+shape = SubResource("box23")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step16"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step16/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 3.1270, -1.9617)
+shape = SubResource("box24")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step17"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step17/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 3.3770, -2.3187)
+shape = SubResource("box25")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step18"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step18/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 3.6270, -2.6758)
+shape = SubResource("box26")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step19"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step19/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 3.8770, -3.0328)
+shape = SubResource("box27")
+
+[node name="Collision" type="StaticBody3D" parent="escalator_up/escalator_up_step20"]
+
+[node name="Box" type="CollisionShape3D" parent="escalator_up/escalator_up_step20/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 3.8770, -3.3899)
+shape = SubResource("box28")

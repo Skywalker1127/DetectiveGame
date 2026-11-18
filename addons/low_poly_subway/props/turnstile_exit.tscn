@@ -1,0 +1,189 @@
+[gd_scene load_steps=23 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/turnstile_exit_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.3200, 2.2500, 0.3044)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(1.7000, 0.1200, 1.7090)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(0.0360, 2.2500, 0.0312)
+
+[sub_resource type="BoxShape3D" id="box3"]
+size = Vector3(0.0360, 2.2500, 0.0311)
+
+[sub_resource type="BoxShape3D" id="box4"]
+size = Vector3(0.0360, 2.2500, 0.0311)
+
+[sub_resource type="BoxShape3D" id="box5"]
+size = Vector3(0.0360, 2.2500, 0.0311)
+
+[sub_resource type="BoxShape3D" id="box6"]
+size = Vector3(0.0360, 2.2500, 0.0312)
+
+[sub_resource type="BoxShape3D" id="box7"]
+size = Vector3(0.0360, 2.2500, 0.0312)
+
+[sub_resource type="BoxShape3D" id="box8"]
+size = Vector3(0.0360, 2.2500, 0.0312)
+
+[sub_resource type="BoxShape3D" id="box9"]
+size = Vector3(0.0360, 2.2500, 0.0311)
+
+[sub_resource type="BoxShape3D" id="box10"]
+size = Vector3(0.0360, 2.2500, 0.0311)
+
+[sub_resource type="BoxShape3D" id="box11"]
+size = Vector3(0.0360, 2.2500, 0.0311)
+
+[sub_resource type="BoxShape3D" id="box12"]
+size = Vector3(0.0360, 2.2500, 0.0312)
+
+[sub_resource type="BoxShape3D" id="box13"]
+size = Vector3(0.0600, 2.2400, 0.0600)
+
+[sub_resource type="BoxShape3D" id="box14"]
+size = Vector3(0.0600, 2.2400, 0.0600)
+
+[sub_resource type="BoxShape3D" id="box15"]
+size = Vector3(0.0600, 2.2400, 0.0600)
+
+[sub_resource type="BoxShape3D" id="box16"]
+size = Vector3(0.0600, 2.2400, 0.0600)
+
+[sub_resource type="BoxShape3D" id="box17"]
+size = Vector3(0.5644, 2.0000, 0.3425)
+
+[sub_resource type="BoxShape3D" id="box18"]
+size = Vector3(0.5644, 2.0000, 0.3425)
+
+[sub_resource type="BoxShape3D" id="box19"]
+size = Vector3(0.0300, 2.0000, 0.6350)
+
+[node name="turnstile_exit" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "button"
+clip = "turn"
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1250, -0.0000)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_head"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_head/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.3000, 0.0045)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage0"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage0/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3750, 1.1250, -0.6495)
+shape = SubResource("box2")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage1"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage1/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5018, 1.1250, -0.5574)
+shape = SubResource("box3")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage2"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6068, 1.1250, -0.4408)
+shape = SubResource("box4")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage3"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage3/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6852, 1.1250, -0.3050)
+shape = SubResource("box5")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage4"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage4/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7336, 1.1250, -0.1559)
+shape = SubResource("box6")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage5"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage5/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7500, 1.1250, -0.0000)
+shape = SubResource("box7")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage6"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage6/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7336, 1.1250, 0.1559)
+shape = SubResource("box8")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage7"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage7/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6852, 1.1250, 0.3050)
+shape = SubResource("box9")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage8"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage8/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6068, 1.1250, 0.4408)
+shape = SubResource("box10")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage9"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage9/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5018, 1.1250, 0.5574)
+shape = SubResource("box11")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_cage10"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_cage10/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3750, 1.1250, 0.6495)
+shape = SubResource("box12")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_post0"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_post0/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8200, 1.1200, 0.8500)
+shape = SubResource("box13")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_post1"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_post1/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8200, 1.1200, -0.8500)
+shape = SubResource("box14")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_post2"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_post2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8200, 1.1200, 0.8500)
+shape = SubResource("box15")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_post3"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_post3/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8200, 1.1200, -0.8500)
+shape = SubResource("box16")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_rotor"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_rotor/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3272, 1.0500, -0.1893)
+shape = SubResource("box17")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_rotor/turnstile_exit_wing1"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_rotor/turnstile_exit_wing1/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3272, 1.0500, -0.1893)
+shape = SubResource("box18")
+
+[node name="Collision" type="StaticBody3D" parent="turnstile_exit/turnstile_exit_rotor/turnstile_exit_wing2"]
+
+[node name="Box" type="CollisionShape3D" parent="turnstile_exit/turnstile_exit_rotor/turnstile_exit_wing2/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.0500, 0.3775)
+shape = SubResource("box19")

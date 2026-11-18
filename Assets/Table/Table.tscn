@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://05lu5do62h4l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wood"]
+albedo_color = Color(0.45, 0.3, 0.17, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_top"]
+material = SubResource("StandardMaterial3D_wood")
+size = Vector3(1.8, 0.04, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_top"]
+size = Vector3(1.8, 0.04, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_leg"]
+material = SubResource("StandardMaterial3D_wood")
+size = Vector3(0.07, 0.73, 0.07)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_leg"]
+size = Vector3(0.07, 0.73, 0.07)
+
+[node name="Table" type="StaticBody3D" unique_id=1090557724]
+
+[node name="TopMesh" type="MeshInstance3D" parent="." unique_id=1143114509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
+mesh = SubResource("BoxMesh_top")
+
+[node name="TopCollision" type="CollisionShape3D" parent="." unique_id=1646547278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
+shape = SubResource("BoxShape3D_top")
+
+[node name="LegFrontLeftMesh" type="MeshInstance3D" parent="." unique_id=36244300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825, 0.365, 0.375)
+mesh = SubResource("BoxMesh_leg")
+
+[node name="LegFrontLeftCollision" type="CollisionShape3D" parent="." unique_id=1898957705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825, 0.365, 0.375)
+shape = SubResource("BoxShape3D_leg")
+
+[node name="LegFrontRightMesh" type="MeshInstance3D" parent="." unique_id=1280546158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825, 0.365, 0.375)
+mesh = SubResource("BoxMesh_leg")
+
+[node name="LegFrontRightCollision" type="CollisionShape3D" parent="." unique_id=522574877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825, 0.365, 0.375)
+shape = SubResource("BoxShape3D_leg")
+
+[node name="LegBackLeftMesh" type="MeshInstance3D" parent="." unique_id=1841052939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825, 0.365, -0.375)
+mesh = SubResource("BoxMesh_leg")
+
+[node name="LegBackLeftCollision" type="CollisionShape3D" parent="." unique_id=1305976723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825, 0.365, -0.375)
+shape = SubResource("BoxShape3D_leg")
+
+[node name="LegBackRightMesh" type="MeshInstance3D" parent="." unique_id=1042192468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825, 0.365, -0.375)
+mesh = SubResource("BoxMesh_leg")
+
+[node name="LegBackRightCollision" type="CollisionShape3D" parent="." unique_id=193919307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825, 0.365, -0.375)
+shape = SubResource("BoxShape3D_leg")

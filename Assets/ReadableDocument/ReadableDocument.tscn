@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bff7vr241upj2"]
+
+[ext_resource type="Script" uid="uid://buyowshv67gop" path="res://Assets/ReadableDocument/ReadableDocument.cs" id="1_rdscr"]
+[ext_resource type="PackedScene" uid="uid://ckgq52iy1umw0" path="res://UI/Dialogue/Document.tscn" id="2_rddoc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rddoc"]
+size = Vector3(0.24, 0.06, 0.32)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rddoc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rddoc"]
+material = SubResource("StandardMaterial3D_rddoc")
+size = Vector3(0.2, 0.04, 0.28)
+
+[node name="ReadableDocument" type="Area3D" unique_id=850999672]
+script = ExtResource("1_rdscr")
+DocumentUi = ExtResource("2_rddoc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1966346402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+shape = SubResource("BoxShape3D_rddoc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=682573508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("BoxMesh_rddoc")
+skeleton = NodePath("../..")

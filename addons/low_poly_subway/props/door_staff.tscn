@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/door_staff_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.0800, 2.2800, 0.3300)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.0800, 2.2800, 0.3300)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(0.9800, 0.0800, 0.3300)
+
+[sub_resource type="BoxShape3D" id="box3"]
+size = Vector3(0.9800, 2.1700, 0.1530)
+
+[sub_resource type="BoxShape3D" id="box4"]
+size = Vector3(0.0100, 0.0300, 0.0500)
+
+[node name="door_staff" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "slot"
+takes = "metro_key"
+clip = "open"
+fitted = PackedStringArray("door_staff_key")
+
+[node name="Collision" type="StaticBody3D" parent="door_staff"]
+
+[node name="Box" type="CollisionShape3D" parent="door_staff/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5300, 1.1400, -0.0000)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="door_staff/door_staff_jamb"]
+
+[node name="Box" type="CollisionShape3D" parent="door_staff/door_staff_jamb/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5300, 1.1400, -0.0000)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="door_staff/door_staff_head"]
+
+[node name="Box" type="CollisionShape3D" parent="door_staff/door_staff_head/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.2300, -0.0000)
+shape = SubResource("box2")
+
+[node name="Collision" type="StaticBody3D" parent="door_staff/door_staff_leaf"]
+
+[node name="Box" type="CollisionShape3D" parent="door_staff/door_staff_leaf/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4700, 1.0950, -0.0105)
+shape = SubResource("box3")
+
+[node name="Collision" type="StaticBody3D" parent="door_staff/door_staff_leaf/door_staff_key"]
+
+[node name="Box" type="CollisionShape3D" parent="door_staff/door_staff_leaf/door_staff_key/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0000, 0.0350)
+shape = SubResource("box4")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/signal_metro_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.3000, 2.4500, 0.3900)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.1040, 0.0990, 0.0060)
+
+[sub_resource type="BoxShape3D" id="box2"]
+size = Vector3(0.1040, 0.0990, 0.0060)
+
+[node name="signal_metro" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+lit = PackedStringArray("signal_metro_green")
+idle = PackedStringArray("signal_metro_red")
+
+[node name="Collision" type="StaticBody3D" parent="signal_metro"]
+
+[node name="Box" type="CollisionShape3D" parent="signal_metro/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7500, 0.1250, 0.0450)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="signal_metro/signal_metro_green"]
+
+[node name="Box" type="CollisionShape3D" parent="signal_metro/signal_metro_green/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7100, 1.2300, 0.1430)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="signal_metro/signal_metro_red"]
+
+[node name="Box" type="CollisionShape3D" parent="signal_metro/signal_metro_red/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7100, 1.0200, 0.1430)
+shape = SubResource("box2")

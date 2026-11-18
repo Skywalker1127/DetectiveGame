@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b3iwvntukbcs8"]
+
+[ext_resource type="Script" uid="uid://dmmn6gfghij8w" path="res://Assets/InspectableObject/InspectOverlay.cs" id="1_overlay"]
+[ext_resource type="Shader" uid="uid://vunhabhpkekv" path="res://Assets/InspectableObject/InspectBlur.gdshader" id="2_blur"]
+[ext_resource type="Texture2D" uid="uid://cdqrk271vo0e0" path="res://UI/Icons/cross.png" id="3_cross"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blur"]
+shader = ExtResource("2_blur")
+shader_parameter/amount = 0.0
+shader_parameter/blur_lod = 3.0
+shader_parameter/dim = 0.35
+
+[sub_resource type="QuadMesh" id="QuadMesh_moebius"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="Environment" id="Environment_ambient"]
+ambient_light_source = 2
+ambient_light_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="InspectOverlay" type="CanvasLayer" unique_id=1050097312 node_paths=PackedStringArray("Camera", "MoebiusQuad", "BlurRect", "Pivot", "Holder", "ExitButton")]
+layer = 10
+script = ExtResource("1_overlay")
+Camera = NodePath("SubViewportContainer/SubViewport/Camera3D")
+MoebiusQuad = NodePath("SubViewportContainer/SubViewport/Camera3D/MoebiusQuad")
+BlurRect = NodePath("BlurRect")
+Pivot = NodePath("SubViewportContainer/SubViewport/Pivot")
+Holder = NodePath("SubViewportContainer/SubViewport/Pivot/Holder")
+ExitButton = NodePath("ExitButton")
+
+[node name="BlurRect" type="ColorRect" parent="." unique_id=177701758]
+material = SubResource("ShaderMaterial_blur")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=403311722]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1621487281]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1151543344]
+current = true
+near = 0.01
+
+[node name="MoebiusQuad" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=2033071574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_moebius")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1053235922]
+transform = Transform3D(0.7071, -0.40825, 0.57735, 0, 0.8165, 0.57735, -0.7071, -0.40825, 0.57735, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=32881790]
+environment = SubResource("Environment_ambient")
+
+[node name="Pivot" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1043121371]
+
+[node name="Holder" type="Node3D" parent="SubViewportContainer/SubViewport/Pivot" unique_id=1253352037]
+
+[node name="ExitButton" type="Button" parent="." unique_id=150221748]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 25.0
+offset_right = -25.0
+grow_horizontal = 0
+theme_override_constants/icon_max_width = 50
+icon = ExtResource("3_cross")

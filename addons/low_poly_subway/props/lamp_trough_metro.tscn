@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d2m267cdujrtj"]
+
+[ext_resource type="PackedScene" uid="uid://bgp1a28a2oir8" path="res://addons/low_poly_subway/models/lamp_trough_metro_model.glb" id="1"]
+[ext_resource type="Script" uid="uid://jn3jalgiwvuc" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.124, 0.005, 1.564)
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.17, 0.096, 1.64)
+
+[node name="lamp_trough_metro" unique_id=362513499 instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+on = true
+lit = PackedStringArray("lamp_trough_metro_lens")
+
+[node name="Collision" type="StaticBody3D" parent="lamp_trough_metro/lamp_trough_metro_lens" parent_id_path=PackedInt32Array(1468867120) index="0" unique_id=1045593809]
+
+[node name="Box" type="CollisionShape3D" parent="lamp_trough_metro/lamp_trough_metro_lens/Collision" index="0" unique_id=2129512168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.895, 0)
+shape = SubResource("box1")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="lamp_trough_metro/lamp_trough_metro_lens/Collision/Box" index="0" unique_id=463433210]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+light_energy = 3.37
+light_size = 0.806
+area_size = Vector2(2, 2)
+
+[node name="Collision" type="StaticBody3D" parent="lamp_trough_metro" parent_id_path=PackedInt32Array(695531483) index="1" unique_id=1546856765]
+
+[node name="Box" type="CollisionShape3D" parent="lamp_trough_metro/Collision" index="0" unique_id=1203343464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.943, 0)
+shape = SubResource("box0")

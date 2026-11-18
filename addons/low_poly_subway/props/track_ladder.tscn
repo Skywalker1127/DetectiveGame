@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/track_ladder_model.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.4360, 1.4680, 0.2958)
+
+[node name="track_ladder" instance=ExtResource("1")]
+
+[node name="Collision" type="StaticBody3D" parent="track_ladder"]
+
+[node name="Box" type="CollisionShape3D" parent="track_ladder/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, -0.3660, -0.0699)
+shape = SubResource("box0")

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dwtdlevehlsm7"]
+
+[ext_resource type="Texture2D" uid="uid://csrv6w3rhstse" path="res://UI/Icons/Crosshair.png" id="1_dbj06"]
+[ext_resource type="Texture2D" uid="uid://dxy4km0kj4cqb" path="res://UI/Icons/Crosshair_Interactible.png" id="2_intr"]
+[ext_resource type="Script" uid="uid://cdiehiu7fv4p0" path="res://UI/Crosshair.cs" id="3_xhair"]
+
+[node name="MainHud" type="Control" unique_id=247329022]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="TextureRect" parent="." unique_id=741593037]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 37.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_dbj06")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_xhair")
+DefaultTexture = ExtResource("1_dbj06")
+InteractibleTexture = ExtResource("2_intr")
+InteractibleSize = Vector2(37, 37)

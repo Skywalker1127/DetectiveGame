@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c48b1qhns0ioj"]
+
+[ext_resource type="Script" uid="uid://cforu2r87w76g" path="res://Assets/InspectableObject/InspectableObject.cs" id="1_kxrl3"]
+[ext_resource type="PackedScene" uid="uid://y1otjvqcpi0i" path="res://Models/Plant B.fbx" id="1_pbyf0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cactus"]
+size = Vector3(0.3, 0.4, 0.3)
+
+[node name="Cactus" type="Area3D" unique_id=2140458649]
+script = ExtResource("1_kxrl3")
+
+[node name="Plant B" parent="." unique_id=1942191506 instance=ExtResource("1_pbyf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19492376, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=129540726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_cactus")

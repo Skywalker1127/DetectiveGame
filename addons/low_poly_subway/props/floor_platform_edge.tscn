@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://uorsptojtfrb"]
+
+[ext_resource type="PackedScene" uid="uid://dxxk1hoktcijp" path="res://addons/low_poly_subway/models/platform_edge_model.glb" id="1_odsfu"]
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(2, 0.25, 0.4)
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(2, 0.005, 2)
+
+[node name="floor_platform_edge" unique_id=546139610 instance=ExtResource("1_odsfu")]
+
+[node name="Collision" type="StaticBody3D" parent="platform_edge/platform_edge_nosing" parent_id_path=PackedInt32Array(983855874) index="0" unique_id=367387676]
+
+[node name="Box" type="CollisionShape3D" parent="platform_edge/platform_edge_nosing/Collision" index="0" unique_id=1262028069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 1.2)
+shape = SubResource("box1")
+
+[node name="Collision" type="StaticBody3D" parent="platform_edge" parent_id_path=PackedInt32Array(354465914) index="1" unique_id=2073277587]
+
+[node name="Box" type="CollisionShape3D" parent="platform_edge/Collision" index="0" unique_id=176037857]
+shape = SubResource("box0")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/low_poly_subway/models/tunnel_fan_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/low_poly_subway/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.8200, 0.9000, 2.2600)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(0.5502, 0.5800, 0.2500)
+
+[node name="tunnel_fan" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "powered"
+run = "spin"
+
+[node name="Collision" type="StaticBody3D" parent="tunnel_fan"]
+
+[node name="Box" type="CollisionShape3D" parent="tunnel_fan/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0600, 2.9000, -0.0000)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="tunnel_fan/tunnel_fan_impeller"]
+
+[node name="Box" type="CollisionShape3D" parent="tunnel_fan/tunnel_fan_impeller/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0000, 0.0950)
+shape = SubResource("box1")
